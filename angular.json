@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/eleicoes-fortaleza-2024/",
+            "baseHref": "/eleicoes-fortalezace-2024/",
             "outputPath": "dist/analise-urnas-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
