@@ -1,0 +1,65 @@
+<div *ngIf="isLoading" class="loading-overlay">
+    <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
+</div>
+
+<div class="container mx-auto p-4 pt-20">
+    <h1 class="text-2xl font-bold mb-4 flex items-center">
+        Votação Geral Candidato por Bairro - 1º Turno
+        <!-- Espaço entre o título e o multiselect -->
+        <p-multiSelect
+            [options]="bairrosEleicaoPrimeiroTurno" 
+            [(ngModel)]="selectedBairrosPrimeiroTurno"
+            [selectedItemsLabel]="'bairros selecionados'"
+            defaultLabel="Selecione bairros" 
+            class="ml-4"
+            (onChange)="graficoBarraVotosPorCandidatoPorBairro(mapVotosPorCanditadoPorBairroPrimeiroTurno, 'PrimeiroTurno', true)">
+        </p-multiSelect>
+    </h1>
+    <div class="w-full" style="height: 20rem;" echarts [options]="mapOptionGraficos.get('graficoBarrasVotosPorCandidatoPorBairroPrimeiroTurno')"></div>
+</div>
+
+<div class="container mx-auto p-4 pt-20">
+    <h1 class="text-2xl font-bold mb-4 flex items-center">
+        Votação Geral Candidato por Bairro - 2º Turno
+        <!-- Espaço entre o título e o multiselect -->
+        <p-multiSelect
+            [options]="bairrosEleicaoSegundoTurno" 
+            [(ngModel)]="selectedBairrosSegundoTurno"
+            [selectedItemsLabel]="'bairros selecionados'"
+            defaultLabel="Selecione bairros" 
+            class="ml-4"
+            (onChange)="graficoBarraVotosPorCandidatoPorBairro(mapVotosPorCanditadoPorBairroSegundoTurno, 'SegundoTurno', true)">
+        </p-multiSelect>
+    </h1>  
+    <div class="w-full" style="height: 20rem;" echarts [options]="mapOptionGraficos.get('graficoBarrasVotosPorCandidatoPorBairroSegundoTurno')"></div>
+</div>
+
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Votação Geral por Candidato - 1º Turno</h1>
+    <div class="w-full" style="height: 20rem;" echarts [options]="mapOptionGraficos.get('graficoDonutsVotosPorCandidatoPrimeiroTurno')"></div>
+</div>
+
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Votação Geral por Candidato - 2º Turno</h1>
+    <div class="w-full" style="height: 20rem;" echarts [options]="mapOptionGraficos.get('graficoDonutsVotosPorCandidatoSegundoTurno')"></div>
+</div>
+
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Votação Geral Candidato por Zona - 1º Turno</h1>    
+    <div class="w-full" style="height: 20rem;" echarts [options]="mapOptionGraficos.get('graficoBarrasVotosPorCandidatoPorZonaPrimeiroTurno')"></div>
+</div>
+
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Votação Geral Candidato por Zona - 2º Turno</h1>    
+    <div class="w-full" style="height: 20rem;" echarts [options]="mapOptionGraficos.get('graficoBarrasVotosPorCandidatoPorZonaSegundoTurno')"></div>
+</div>
+
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Votação Geral Candidato por Zona(ZN) | Seção(SC) - 1º Turno</h1>    
+    <div class="w-full" style="height: 20rem;" echarts [options]="mapOptionGraficos.get('graficoBarrasVotosPorCandidatoPorSecaoPrimeiroTurno')"></div>
+</div>
+
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Votação Geral Candidato por Zona(ZN) | Seção(SC) - 2º Turno</h1>    
+    <div class="w-full" style="height: 20rem;" echarts [options]="mapOptionGraficos.get('graficoBarrasVotosPorCandidatoPorSecaoSegundoTurno')"></div>
+</div>
